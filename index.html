@@ -17,8 +17,11 @@
   
     @keyframes __mc_spin{to{transform:rotate(360deg)}}
     @keyframes __mc_pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.82;transform:scale(.96)}}
-    #__bundler_thumbnail svg{animation:__mc_pulse 2s ease-in-out infinite}
+    #__bundler_thumbnail svg{animation:none}
     #__mc_spinner{width:30px;height:30px;border:3px solid rgba(46,127,192,.18);border-top-color:#2E7FC0;border-radius:50%;animation:__mc_spin .8s linear infinite;margin-top:-4px}
+  
+    @keyframes __mc_autohide{0%,60%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden;pointer-events:none}}
+    #__bundler_thumbnail{animation:__mc_autohide 1.8s ease forwards!important}
   </style>
   <noscript>
     <style>#__bundler_loading { display: none; }</style>

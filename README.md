@@ -1,22 +1,13 @@
-# Pet Shop Menino & Charlotte — Landing Page
+# Site Pet Shop Menino & Charllote (Trobogy, Salvador/BA)
 
-Site institucional do Pet Shop Menino & Charlotte (Salvador, BA).
-Desenvolvido por Spartus Digital.
+Site estático gerado por Node, sem dependências. Publicado em https://petshopmeninoecharllote.com.br (deploy automático na branch master).
 
-## Publicar (GitHub Pages)
-1. Suba o conteúdo desta pasta na raiz do repositório.
-2. Settings > Pages > Source: "Deploy from a branch" > branch `main` / pasta `/ (root)`.
-3. O site fica disponível em `https://<usuario>.github.io/<repo>/`.
+- `npm run build`: gera `dist/`
+- `npm run dev`: gera e abre em http://localhost:4324
 
-`index.html` é autossuficiente: todas as imagens, fontes e scripts estão embutidos.
-
-## Arquivos
-- `index.html` — site publicável, arquivo único (1.6 MB)
-- `fonte/Pet Shop Menino e Charlotte.dc.html` — arquivo de trabalho (editável)
-- `fonte/support.js`, `fonte/image-slot.js` — dependências do arquivo de trabalho
-- `fotos/` — fotos originais usadas no site
-
-## Contato do cliente
-WhatsApp: (71) 99627-1403
-Endereço: R. Mocambo, 877 - Trobogy, Salvador - BA, 41745-039
-Horário: Seg–Sáb 08h–20h | Dom 08h–13h
+## Onde editar
+- `src/data.mjs`: telefone, endereço, horário, categorias de produtos e FAQ
+- `src/templates.mjs`: HTML das páginas
+- `src/art.mjs`: ilustrações SVG (marca, balança, pet do enxoval)
+- `public/assets/styles.css` e `public/assets/main.js`: visual e interações (balança de ração, enxoval)
+- `public/img/`: fotos reais otimizadas. Originais em `tools/originais/`

@@ -1,0 +1,165 @@
+// Dados centrais do negócio. NAP, horário e categorias saem daqui.
+// O nome segue o Perfil da Empresa no Google ("Charllote"); "Charlotte" fica como nome alternativo.
+
+export const business = {
+  name: 'Pet Shop Menino & Charllote',
+  short: 'Menino & Charllote',
+  alternateName: 'Pet Shop Menino & Charlotte',
+  siteUrl: 'https://petshopmeninoecharllote.com.br',
+  phoneDisplay: '(71) 99627-1403',
+  phoneE164: '+5571996271403',
+  whatsapp: '5571996271403',
+  instagram: 'https://www.instagram.com/meninocharlloteofc/',
+  instagramHandle: '@meninocharlloteofc',
+  googleProfile: 'https://maps.google.com/?cid=10053332277442539382',
+  rating: { value: '5,0', count: 2 },
+  address: {
+    street: 'R. Mocambo, 877',
+    district: 'Trobogy',
+    city: 'Salvador',
+    state: 'BA',
+    zip: '41745-039',
+    country: 'BR',
+  },
+  geo: { lat: -12.9273934, lng: -38.4082025 },
+  hours: [
+    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], label: 'Segunda a sábado', open: '08:00', close: '20:00' },
+    { days: ['Sunday'], label: 'Domingo', open: '08:00', close: '13:00' },
+  ],
+};
+
+export const mapsQuery = encodeURIComponent('Pet Shop Menino & Charllote, R. Mocambo, 877, Trobogy, Salvador - BA');
+export const mapsLink = business.googleProfile;
+export const mapsEmbed = `https://www.google.com/maps?q=${mapsQuery}&output=embed`;
+export const wa = (text) => `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(text)}`;
+
+// ---------------------------------------------------------------------------
+// Categorias — cada uma vira /produtos/<slug>/ (lista do letreiro da loja)
+// ---------------------------------------------------------------------------
+export const categories = [
+  {
+    slug: 'racao-para-caes',
+    icon: 'dog',
+    short: 'Ração para cães',
+    title: 'Ração para cães',
+    metaTitle: 'Ração para Cães no Trobogy, Salvador | Menino & Charllote',
+    metaDesc: 'Ração para cães filhotes, adultos e idosos no Trobogy, Salvador: premium e super premium, em saco fechado ou a granel. Delivery pelo WhatsApp.',
+    lead: 'Para filhotes, adultos e idosos, de todos os portes. Linhas premium e super premium, em saco fechado ou a granel, pesada na hora.',
+    items: ['Ração seca para filhotes, adultos e idosos', 'Linhas premium e super premium', 'Ração a granel, pesada na quantidade que você precisa', 'Ração úmida e sachês', 'Opções para porte pequeno, médio e grande'],
+    tip: ['Trocando de ração?', 'Faça a transição em cerca de 7 dias: comece com um quarto da nova ração misturada à antiga e aumente aos poucos. Assim o intestino do seu cão se adapta sem desconforto.'],
+    faq: [
+      ['Vocês vendem ração a granel?', 'Sim. Você leva a quantidade que quiser, pesada na hora. É uma boa forma de testar uma ração nova antes de comprar o saco fechado.'],
+      ['Qual a diferença entre premium e super premium?', 'As linhas super premium costumam ter ingredientes mais selecionados e maior aproveitamento, então o cão come uma quantidade menor por dia. Ajudamos você a comparar no balcão ou pelo WhatsApp.'],
+      ['Vocês entregam ração?', 'Sim. Peça pelo WhatsApp e combinamos a entrega no Trobogy e região.'],
+    ],
+  },
+  {
+    slug: 'racao-para-gatos',
+    icon: 'cat',
+    short: 'Ração para gatos',
+    title: 'Ração para gatos',
+    metaTitle: 'Ração para Gatos no Trobogy, Salvador | Menino & Charllote',
+    metaDesc: 'Ração para gatos filhotes, adultos, castrados e idosos no Trobogy, Salvador. Seca, úmida e sachês, com delivery pelo WhatsApp.',
+    lead: 'Ração seca, úmida e sachês para gatos filhotes, adultos, castrados e idosos. Também a granel, para quem quer testar antes de levar o saco.',
+    items: ['Ração seca para filhotes, adultos e idosos', 'Linhas para gatos castrados', 'Sachês e ração úmida', 'Ração a granel', 'Areia e itens de rotina do gato'],
+    tip: ['Gato enjoado com ração nova?', 'Gatos estranham mudanças. Misture a ração nova à antiga ao longo de uma semana e mantenha o pote sempre limpo; o cheiro de comida velha afasta o gato do pote.'],
+    faq: [
+      ['Gato castrado precisa de ração específica?', 'É recomendado. As linhas para castrados têm menos calorias e ajudam a controlar o peso, já que o gato castrado tende a engordar mais fácil.'],
+      ['Posso misturar ração seca com sachê?', 'Pode, ajustando a quantidade de ração seca para não passar das calorias do dia. Na dúvida, siga a tabela da embalagem e a orientação do veterinário.'],
+    ],
+  },
+  {
+    slug: 'petiscos',
+    icon: 'cookie',
+    short: 'Petiscos',
+    title: 'Petiscos para cães e gatos',
+    metaTitle: 'Petiscos para Cães e Gatos no Trobogy, Salvador | Menino & Charllote',
+    metaDesc: 'Petiscos, bifinhos, ossinhos e snacks para cães e gatos no Trobogy, Salvador. Para treino, recompensa e diversão. Peça pelo WhatsApp.',
+    lead: 'Bifinhos, ossinhos, snacks e sachês para recompensar, treinar e agradar. Para cães e gatos.',
+    items: ['Bifinhos e snacks para treino', 'Ossinhos e mordedores comestíveis', 'Petiscos para gatos', 'Opções para filhotes'],
+    tip: ['Quanto petisco por dia?', 'A regra mais usada é que petiscos não passem de 10% das calorias do dia. Para treino, quebre em pedaços pequenos: a recompensa vale pelo gesto, não pelo tamanho.'],
+    faq: [['Petisco substitui a ração?', 'Não. Petisco é complemento. A base da alimentação continua sendo a ração completa e balanceada.']],
+  },
+  {
+    slug: 'brinquedos',
+    icon: 'volleyball',
+    short: 'Brinquedos',
+    title: 'Brinquedos para cães e gatos',
+    metaTitle: 'Brinquedos para Cães e Gatos no Trobogy, Salvador | Menino & Charllote',
+    metaDesc: 'Bolinhas, mordedores, pelúcias e brinquedos para gatos no Trobogy, Salvador. Gasto de energia e diversão para o seu pet.',
+    lead: 'Bolinhas, mordedores, pelúcias e brinquedos para gatos. Gasto de energia, menos tédio e menos móvel roído.',
+    items: ['Bolinhas e brinquedos de buscar', 'Mordedores resistentes', 'Pelúcias', 'Varinhas e brinquedos para gatos'],
+    tip: ['Escolha pelo jeito do pet', 'Cão que destrói tudo pede mordedor resistente; cão que adora correr, bolinha. Gato caçador gosta de varinha. Faça rodízio dos brinquedos para eles continuarem novidade.'],
+    faq: [['Qual brinquedo é seguro para filhote?', 'Prefira brinquedos do tamanho certo para a boca do filhote e sem peças pequenas que possam ser engolidas. Ajudamos a escolher na loja.']],
+  },
+  {
+    slug: 'coleiras-e-acessorios',
+    icon: 'paw-print',
+    short: 'Coleiras e acessórios',
+    title: 'Coleiras, guias e acessórios',
+    metaTitle: 'Coleiras e Guias no Trobogy, Salvador | Menino & Charllote',
+    metaDesc: 'Coleiras, guias, peitorais e acessórios para cães e gatos no Trobogy, Salvador. Ajudamos a escolher o tamanho certo.',
+    lead: 'Coleiras, guias, peitorais e acessórios para passeio e identificação. Ajudamos a acertar o tamanho.',
+    items: ['Coleiras para cães e gatos', 'Guias e peitorais', 'Bandanas e acessórios', 'Itens de passeio'],
+    tip: ['Como saber o tamanho da coleira?', 'Meça o pescoço do pet e some dois dedos de folga: a coleira não pode apertar nem sair pela cabeça. Para cães que puxam, o peitoral distribui melhor a força.'],
+    faq: [['Coleira ou peitoral?', 'Para cães que puxam muito ou raças de focinho curto, o peitoral costuma ser mais confortável. A coleira é ótima para a plaquinha de identificação.']],
+  },
+  {
+    slug: 'comedouros-e-bebedouros',
+    icon: 'soup',
+    short: 'Comedouros',
+    title: 'Comedouros e bebedouros',
+    metaTitle: 'Comedouros e Bebedouros Pet no Trobogy, Salvador | Menino & Charllote',
+    metaDesc: 'Comedouros e bebedouros para cães e gatos no Trobogy, Salvador. Tamanhos para todos os portes. Peça pelo WhatsApp.',
+    lead: 'Comedouros e bebedouros em vários tamanhos e materiais, para cães e gatos de todos os portes.',
+    items: ['Comedouros para cães e gatos', 'Bebedouros', 'Potes em tamanhos para cada porte'],
+    tip: ['Água fresca sempre', 'Troque a água todos os dias e lave o pote com frequência. Gatos costumam beber mais quando o bebedouro fica longe do pote de comida.'],
+    faq: [['Qual material de comedouro é melhor?', 'Inox e cerâmica são fáceis de higienizar. O importante é lavar com frequência e escolher um tamanho adequado ao porte.']],
+  },
+  {
+    slug: 'casinhas-e-caminhas',
+    icon: 'house',
+    short: 'Casinhas e caminhas',
+    title: 'Casinhas e caminhas',
+    metaTitle: 'Casinhas e Caminhas Pet no Trobogy, Salvador | Menino & Charllote',
+    metaDesc: 'Casinhas, caminhas e itens de descanso para cães e gatos no Trobogy, Salvador. Consulte tamanhos e modelos pelo WhatsApp.',
+    lead: 'Casinhas e caminhas para o seu pet ter um canto só dele. Consulte tamanhos e modelos disponíveis.',
+    items: ['Casinhas', 'Caminhas', 'Itens de descanso'],
+    tip: ['Tamanho certo', 'O pet deve conseguir ficar de pé, se virar e deitar esticado dentro da casinha. Grande demais esfria; pequena demais aperta.'],
+    faq: [['Vocês têm casinha para cão grande?', 'Consulte pelo WhatsApp os tamanhos disponíveis no momento; se não tivermos, verificamos a encomenda.']],
+  },
+  {
+    slug: 'higiene-e-banho',
+    icon: 'bath',
+    short: 'Higiene e banho',
+    title: 'Higiene e banho em casa',
+    photo: 'shampoos',
+    metaTitle: 'Shampoo e Higiene Pet no Trobogy, Salvador | Menino & Charllote',
+    metaDesc: 'Shampoos, sabonetes, gel dental e itens de higiene para cães e gatos no Trobogy, Salvador. Para o banho em casa. Peça pelo WhatsApp.',
+    lead: 'Shampoos e condicionadores, sabonetes, gel dental e escovas. Tudo para o banho e a higiene do seu pet em casa.',
+    items: ['Shampoos e condicionadores para cães e gatos', 'Linha para filhotes', 'Sabonetes', 'Gel dental e escovas', 'Sabonetes de uso veterinário'],
+    tip: ['Shampoo de gente não serve', 'A pele do cão tem pH diferente da nossa. Use sempre produtos próprios para pets e enxágue bem para não deixar resíduo.'],
+    faq: [['De quanto em quanto tempo dar banho em casa?', 'Depende da pelagem e da rotina. Banho demais resseca a pele; muitos tutores mantêm de uma a duas semanas de intervalo.']],
+  },
+  {
+    slug: 'antipulgas-e-medicamentos',
+    icon: 'pill',
+    short: 'Antipulgas e medicamentos',
+    title: 'Antipulgas e medicamentos',
+    photo: 'higiene',
+    metaTitle: 'Antipulgas e Medicamentos Pet no Trobogy, Salvador | Menino & Charllote',
+    metaDesc: 'Antipulgas, vermífugos e produtos de uso veterinário para cães e gatos no Trobogy, Salvador. Consulte disponibilidade pelo WhatsApp.',
+    lead: 'Antipulgas, vermífugos e produtos de uso veterinário. Consulte a disponibilidade e siga sempre a orientação do veterinário do seu pet.',
+    items: ['Antipulgas e carrapaticidas', 'Vermífugos', 'Sabonetes antiparasitários e antissépticos', 'Produtos de uso veterinário'],
+    tip: ['Pulga se combate em duas frentes', 'Trate o pet e o ambiente. A maior parte da infestação fica no chão, na cama e no sofá, não no animal.'],
+    faq: [['Vocês indicam o remédio?', 'Ajudamos com informações dos produtos, mas a indicação de medicamentos deve vir do médico-veterinário que acompanha o seu pet.']],
+  },
+];
+
+export const homeFaq = [
+  ['Onde fica o Pet Shop Menino & Charllote?', 'Na R. Mocambo, 877, no Trobogy, em Salvador - BA, CEP 41745-039.'],
+  ['Vocês fazem entrega?', 'Sim. Peça pelo WhatsApp (71) 99627-1403 e combinamos a entrega no Trobogy e região.'],
+  ['Vocês vendem ração a granel?', 'Sim. Você leva a quantidade que quiser, pesada na hora.'],
+  ['Qual o horário de funcionamento?', 'Segunda a sábado, das 8h às 20h, e domingo, das 8h às 13h.'],
+  ['Vocês atendem gatos também?', 'Sim. Temos ração, petiscos, brinquedos, higiene e acessórios para cães e gatos.'],
+];

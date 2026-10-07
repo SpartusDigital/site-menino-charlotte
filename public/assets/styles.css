@@ -15,7 +15,8 @@
   --line-2: rgba(22, 32, 44, 0.22);
   --ok: #2f9e6b;
   --bad: #d23b2f;
-  --mark: #1f6fb2;
+  --mark: #1f56b0;
+  --brand-red: #e3262f;
 
   --display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
   --sans: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -93,10 +94,10 @@ figure { margin: 0; }
 .nav { position: fixed; z-index: 50; top: 12px; left: 12px; right: 12px; pointer-events: none; }
 .nav__inner { pointer-events: auto; position: relative; max-width: var(--wrap); margin: 0 auto; height: 70px; display: flex; align-items: center; gap: 16px; padding: 0 12px 0 16px; background: rgba(255, 255, 255, .88); border: 1px solid var(--line); border-radius: 22px; backdrop-filter: saturate(150%) blur(16px); -webkit-backdrop-filter: saturate(150%) blur(16px); box-shadow: 0 10px 30px -22px rgba(18, 62, 102, .45); }
 .logo { display: inline-flex; align-items: center; gap: 8px; }
-.logo__mark { width: 62px; height: 30px; }
-.logo__word { display: flex; flex-direction: column; font-family: var(--display); font-weight: 800; font-size: 19px; line-height: 1; letter-spacing: -.02em; }
-.logo__word small { font-family: var(--sans); font-weight: 700; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 3px; }
-.logo__word i { font-style: normal; color: var(--blue); }
+.logo__mark { width: 66px; height: 32px; }
+.logo__word { display: flex; flex-direction: column; font-family: 'Chewy', var(--display); font-weight: 400; font-size: 21px; line-height: 1; letter-spacing: .01em; }
+.logo__word small { font-family: 'Lilita One', var(--display); font-weight: 400; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--brand-red); margin-bottom: 2px; }
+.logo__word i { font-style: normal; }
 .nav__links { display: flex; gap: 2px; margin-left: auto; }
 .nav__links a { padding: 9px 12px; border-radius: 12px; font-weight: 600; font-size: 15px; color: var(--muted); transition: color .2s, background-color .2s; }
 .nav__links a:hover { color: var(--ink); background: var(--yellow-soft); }
@@ -300,7 +301,15 @@ figure { margin: 0; }
 /* CTA final */
 .cta-band { padding: clamp(80px, 11vw, 130px) 0; text-align: center; }
 .cta-band__inner { display: flex; flex-direction: column; align-items: center; gap: 26px; }
-.cta-band__mark { width: 140px; height: auto; }
+.lockup { display: inline-flex; flex-direction: column; align-items: center; }
+.lockup__mark { width: 100%; height: auto; }
+.lockup__ps { font-family: 'Lilita One', var(--display); color: var(--brand-red); line-height: .95; -webkit-text-stroke: 6px #fff; paint-order: stroke fill; }
+.lockup__nm { font-family: 'Chewy', var(--display); color: var(--ink); text-transform: uppercase; line-height: 1.05; -webkit-text-stroke: 5px #fff; paint-order: stroke fill; letter-spacing: .02em; }
+.lockup--lg { width: 300px; padding: 22px 26px 18px; border-radius: 26px; background: var(--yellow); border: 2px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); }
+.lockup--lg .lockup__mark { width: 210px; }
+.lockup--lg .lockup__ps { font-size: 46px; margin-top: -2px; }
+.lockup--lg .lockup__nm { font-size: 25px; }
+.nf-lockup { margin-bottom: 28px; }
 .cta-band .h2 { max-width: 14em; }
 
 /* Páginas internas */
@@ -323,13 +332,13 @@ figure { margin: 0; }
 .prose .h2 { margin-bottom: 20px; }
 .prose p { font-size: 1.1rem; line-height: 1.7; margin-top: 14px; color: var(--muted); }
 .prose a { color: var(--blue); font-weight: 700; text-decoration: underline; }
-.nf-mark { width: 160px; height: auto; margin: 0 auto 24px; }
+
 @media (max-width: 860px) { .split { grid-template-columns: 1fr; gap: 32px; } }
 
 /* Rodapé */
 .footer { background: var(--ink); color: rgba(255, 255, 255, .8); padding: 70px 0 30px; }
 .footer .logo__word { color: #fff; }
-.footer .logo__word i { color: var(--yellow); }
+.footer .logo__word small { color: #ff6b6b; }
 .footer { --mark: #8cc4f2; }
 .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 40px; }
 .footer__brand p { font-size: 15px; margin-top: 16px; max-width: 26em; }

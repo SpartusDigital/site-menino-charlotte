@@ -1,30 +1,35 @@
 // Ilustrações em SVG no traço do logo (linha azul, manchas amarelas).
 
-// Marca: gato + cachorro ligados por uma linha contínua
+// Marca: redesenho vetorial do logo original (gato + cachorro ligados por uma linha contínua)
 let markN = 0;
 export const mark = (cls = 'mark') => { const n = ++markN; return `<svg class="${cls}" viewBox="0 0 132 64" aria-hidden="true" focusable="false">
   <defs>
-    <clipPath id="mk-c${n}"><circle cx="34" cy="36" r="18"/></clipPath>
-    <clipPath id="mk-d${n}"><circle cx="96" cy="36" r="18"/></clipPath>
+    <clipPath id="mk-c${n}"><circle cx="38" cy="38" r="20"/></clipPath>
+    <clipPath id="mk-d${n}"><circle cx="92" cy="38" r="20"/></clipPath>
   </defs>
-  <circle cx="34" cy="36" r="18" fill="#fff"/>
-  <path d="M34 18 H54 V54 H34 Z" fill="var(--yellow)" clip-path="url(#mk-c${n})" opacity=".9"/>
-  <circle cx="96" cy="36" r="18" fill="#fff"/>
-  <ellipse cx="104" cy="30" rx="10" ry="11" fill="var(--yellow)" clip-path="url(#mk-d${n})" opacity=".9"/>
-  <g fill="none" stroke="var(--mark, #1f6fb2)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 24 L17 8 L33 18"/>
-    <path d="M33 18 A18 18 0 1 1 20.6 23.6"/>
-    <path d="M48 47 C 58 60, 72 58, 79 44"/>
-    <path d="M79 44 A18 18 0 1 1 111 46"/>
-    <path d="M104 20 C 118 22, 124 40, 116 54 C 112 58, 106 54, 108 46"/>
+  <path d="M18.5 33 L16 13 L30 21 Q38 17.5 46 21 L58 12 L57.5 33 Z" fill="#fff"/>
+  <circle cx="38" cy="38" r="20" fill="#fff"/>
+  <path d="M14 41 Q38 31 62 41 V62 H14 Z" fill="#f5b51c" clip-path="url(#mk-c${n})"/>
+  <circle cx="92" cy="38" r="20" fill="#f5b51c"/>
+  <ellipse cx="103" cy="24" rx="12" ry="11" fill="#fff" clip-path="url(#mk-d${n})"/>
+  <g fill="none" stroke="var(--mark, #1f56b0)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M57.6 33.5 L58 12 L46 21 Q38 17.5 30 21 L16 13 L18.6 33 A20 20 0 0 0 53 51"/>
+    <path d="M53 51 C 60 60, 68 58, 72 42"/>
+    <path d="M72 42 A20 20 0 1 1 100 56.5"/>
+    <path d="M104 19 C 117 20, 123 34, 119 49 C 117 56, 110 56, 110 49 C 110 43, 112 38, 111 34"/>
   </g>
-  <g fill="var(--mark, #1f6fb2)">
-    <circle cx="28" cy="34" r="2.4"/><circle cx="40" cy="34" r="2.4"/>
-    <path d="M31.5 40 h5 l-2.5 3 z"/>
-    <circle cx="89" cy="32" r="2.4"/><circle cx="101" cy="32" r="2.4"/>
+  <g fill="var(--mark, #1f56b0)">
+    <circle cx="31" cy="36" r="2.7"/><circle cx="46" cy="36" r="2.7"/>
+    <path d="M35.6 42.5 h5.4 l-2.7 3.2 z"/>
+    <circle cx="85" cy="34" r="2.7"/><circle cx="99" cy="34" r="2.7"/>
+    <ellipse cx="92" cy="40.5" rx="3" ry="2.2"/>
   </g>
-  <path d="M89 41 q3.5 4 7 0 q3.5 4 7 0" fill="none" stroke="var(--mark, #1f6fb2)" stroke-width="2.6" stroke-linecap="round"/>
+  <ellipse cx="40.5" cy="49" rx="3" ry="1.9" fill="#f28aa0"/>
+  <path d="M84 45 q4 5 8 0 q4 5 8 0" fill="none" stroke="var(--mark, #1f56b0)" stroke-width="2.9" stroke-linecap="round"/>
 </svg>` };
+
+// Logo completo (marca + PET SHOP + nome), como no letreiro
+export const lockup = (cls = 'lockup') => `<div class="${cls}" role="img" aria-label="Pet Shop Menino &amp; Charllote">${mark('lockup__mark')}<span class="lockup__ps" aria-hidden="true">PET SHOP</span><span class="lockup__nm" aria-hidden="true">Menino &amp; Charllote</span></div>`;
 
 // Balança com tigela (a concha e os grãos são HTML animado por cima)
 export const scaleArt = `<svg class="scale__art" viewBox="0 0 360 250" aria-hidden="true" focusable="false">

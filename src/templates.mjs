@@ -1,6 +1,6 @@
 import { business as B, categories, homeFaq, wa, mapsLink, mapsEmbed } from './data.mjs';
 import { icon } from './icons.mjs';
-import { mark, scaleArt, scoopArt, dressArt } from './art.mjs';
+import { mark, lockup, scaleArt, scoopArt, dressArt } from './art.mjs';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const url = (path) => B.siteUrl + path;
@@ -75,7 +75,7 @@ export function layout({ title, desc, path, body, schemas = [], waText = WA_DEFA
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Chewy&family=Instrument+Sans:wght@400;500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
 </head>
@@ -316,7 +316,7 @@ function reviewBlock() {
 function ctaBand(text = WA_DEFAULT) {
   return `<section class="cta-band" aria-label="Pedido">
   <div class="wrap cta-band__inner reveal">
-    ${mark('cta-band__mark')}
+    ${lockup('lockup lockup--lg')}
     <h2 class="h2">Tudo que seu pet precisa, pertinho de você.</h2>
     <a class="btn btn--primary btn--lg" href="${wa(text)}" target="_blank" rel="noopener">${icon('whatsapp')}<span>Pedir no WhatsApp</span></a>
   </div>
@@ -543,7 +543,7 @@ export function notFoundPage() {
     path: '/404.html',
     noindex: true,
     body: `<section class="page-hero"><div class="wrap wrap--narrow" style="text-align:center">
-  ${mark('nf-mark')}
+  ${lockup('lockup lockup--lg nf-lockup')}
   <h1 class="h1">Essa página fugiu de casa.</h1>
   <p class="lead" style="margin-inline:auto">Mas a ração do seu pet a gente entrega.</p>
   <div class="btns" style="justify-content:center"><a class="btn btn--primary btn--lg" href="/">Voltar ao início</a></div>
